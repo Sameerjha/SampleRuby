@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: SampleApp_EB_production
-  username: SampleApp_EB
-  password: <%= ENV['SAMPLEAPP_EB_DATABASE_PASSWORD'] %>
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
